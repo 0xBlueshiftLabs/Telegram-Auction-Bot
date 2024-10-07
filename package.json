@@ -1,0 +1,29 @@
+{
+  "name": "auction-bot-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/3six9-Financial/AuctionBot.git",
+  "author": "Revolver0celot <rev@3six9.io>",
+  "license": "MIT",
+  "dependencies": {
+    "nginx": "^1.0.8"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages"
+  ],
+  "scripts": {
+    "deploy-backend-local": "cd apps/botBackend && sudo yarn run deploy-local",
+    "deploy-webapp-local": "cd apps/webApp && sudo yarn run deploy-local",
+    "install-all": "sudo yarn && cd apps/botBackend && sudo yarn && cd ../webApp && yarn && cd ../auctionBackend && yarn && cd ../auctionSubgraph && yarn",
+    "install-proxy": "/bin/sh ./scripts/setup.sh",
+    "start-proxy": "/bin/sh ./scripts/startNGINX.sh",
+    "stop-proxy": "/bin/sh ./scripts/stopNGINX.sh",
+    "start-ngrok": "/bin/sh ./scripts/startNGROK.sh",
+    "setup-webhook": "/bin/sh ./scripts/setupWebhook.sh"
+  },
+  "devDependencies": {
+    "ngrok": "^5.0.0-beta.2"
+  },
+  "private":true
+}

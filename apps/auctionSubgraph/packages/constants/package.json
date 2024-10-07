@@ -1,0 +1,18 @@
+{
+    "name": "const",
+    "version": "1.0.0",
+    "description": "Constants",
+    "license": "MIT",
+    "private": true,
+    "main": "index.ts",
+    "scripts": {
+        "codegen": "true",
+        "build": "true",
+        "prepare:arbitrum": "mustache ../../config/arbitrum.json index.template.ts > index.ts",
+        "prepare:arbitrum-rinkeby": "mustache ../../config/arbitrum-rinkeby.json index.template.ts > index.ts",
+        "prepare:arbitrum-goerli": "mustache ../../config/arbitrum-goerli.json index.template.ts > index.ts",
+        "prepare:goerli": "mustache ../../config/goerli.json index.template.ts > index.ts",
+        "prepare:dev": "mustache ../../config/dev.json index.template.ts > index.ts",
+        "prepare:local": "mustache ../../config/localhost.json index.template.ts > index.ts"
+    }
+}

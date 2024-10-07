@@ -1,0 +1,79 @@
+type AuctionUser @entity {
+  id: ID!
+  address: Bytes!
+  auctionSellOrders: [SellOrder!] @derivedFrom(field: "auctionUser")
+  referral: UserReferral
+}
+
+type Auction @entity {
+  id: ID!
+  auctioningToken: Token!
+  biddingToken: Token!
+  orderCancellationEndDate: BigInt!
+  volumeClearingPriceOrder: BigInt!
+  minimumBiddingAmountPerOrder: BigInt!
+  interimSumBidAmount: BigInt!
+  auctionEndDate: BigInt!
+  clearingOrder: SellOrder
+  strategyID: BigInt!
+  referralFeeNumerator: BigInt!
+  minFundingThresholdNotReached: Boolean!
+  sellOrders: [SellOrder!] @derivedFrom(field: "auction")
+  initialAuctionOrder: String!
+  auctionSettled: Boolean!
+  auctionStartDate: BigInt!
+  createdBy: AuctionUser!
+  biddingTokenPledged: BigInt!
+  biddingTokenRaised: BigInt!
+}
+
+type UserReferral @entity {
+  id: ID!
+  referralInfo: [UserReferralInfo!] @derivedFrom(field: "referral")
+  referralRewards: [ReferralReward!] @derivedFrom(field: "referral")
+}
+
+type ReferralReward @entity {
+  id: ID!
+  referral: UserReferral!
+  token: Token!
+  amount: BigInt!
+}
+
+#auctionid - referral code
+type UserReferralInfo @entity {
+  id: ID!
+  auction: Auction!
+  referral: UserReferral!
+  ordersReferredCount: BigInt!
+  ordersWonCount: BigInt!
+  totalWinningSellAmount: BigInt!
+  totalRewards: BigInt!
+  totalSellAmount: BigInt!
+  totalWinningsForReferredOrders: BigInt!
+}
+
+type SellOrder @entity {
+  id: ID!
+  auction: Auction!
+  auctionUser: AuctionUser!
+  buyAmount: BigInt!
+  sellAmount: BigInt!
+  timestamp: BigInt!
+  block: BigInt!
+  orderClaimed: Boolean!
+  cancelled: Boolean!
+  referral: UserReferral
+  winningAmount: BigInt!
+  txHash: String!
+}
+
+type Token @entity {
+  id: ID!
+
+  symbol: String!
+  name: String!
+  decimals: BigInt!
+
+  totalSupply: BigInt!
+}

@@ -1,0 +1,11 @@
+{
+  "network": "arbitrum-goerli",
+  "auction": {
+    "address": "0x0886274EDc1C9c5cd375d99f8Bae175b477A0E04",
+    "startBlock": 48856551
+  },
+  "referral": {
+    "address": "0x70795Be4662Bd98009C3508fb72DB1A8769C43A4",
+    "startBlock": 48856551
+  }
+}

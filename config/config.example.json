@@ -1,0 +1,10 @@
+{
+    "BOT_TOKEN":"botToken",
+    "SECRET_KEY":"secretKey",
+    "PRIVATE_KEY":"Only on dev",
+    "NGROK_API_KEY":"Only on dev",
+    "NGROK_PORT":"7777",
+    "BOT_PORT":"8443",
+    "WEBAPP_PORT":"8444",
+    "LAMBDA_PORT":"6077"
+}

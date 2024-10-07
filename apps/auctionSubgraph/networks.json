@@ -1,0 +1,8 @@
+{
+  "arbitrum-one": {
+    "CreditPairFactory": {
+      "address": "0x5771c832D78fDf76A3DA918E4B7a49c062910639",
+      "startBlock": 95587678
+    }
+  }
+}

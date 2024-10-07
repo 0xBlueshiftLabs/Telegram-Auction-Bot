@@ -1,0 +1,76 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: EasyAuction
+    network: {{ network }}
+    source:
+      abi: EasyAuction
+      address: "{{ auction.address }}"
+      startBlock: {{ auction.startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - AuctionUser
+        - SellOrder
+        - Auction
+      abis:
+        - name: ReferralRewardManager
+          file: ./packages/abis/ReferralRewardManager.json
+        - name: EasyAuction
+          file: ./packages/abis/EasyAuction.json
+        - name: ERC20
+          file: ./packages/abis/ERC20.json
+        - name: ERC20NameBytes
+          file: ./packages/abis/ERC20NameBytes.json
+        - name: ERC20SymbolBytes
+          file: ./packages/abis/ERC20SymbolBytes.json
+      eventHandlers:
+        - event: NewAuction(indexed uint256,indexed address,indexed address,uint256,uint256,uint64,uint96,uint96,uint256,uint256)
+          handler: onNewAuction
+        - event: CancellationSellOrder(indexed uint256,indexed uint64,uint96,uint96)
+          handler: onCancellationSellOrder
+        - event: ClaimedFromOrder((uint256,uint64,uint96,uint96,string,uint256,uint256,uint256))
+          handler: onClaimedFromOrder
+        - event: NewSellOrder(indexed uint256,indexed uint64,uint96,uint96,string)
+          handler: onNewSellOrder
+        - event: NewUser(indexed uint64,indexed address)
+          handler: onNewUser
+        - event: UserRegistration(indexed address,uint64)
+          handler: onUserRegistration
+        - event: AuctionCleared(indexed uint256,indexed uint64,uint96,uint96,uint96,uint96)
+          handler: onAuctionCleared
+      file: ./src/mappings/creditAuction.ts
+  - kind: ethereum/contract
+    name: ReferralRewardManager
+    network: {{ network }}
+    source:
+      address: "{{ referral.address }}"
+      abi: ReferralRewardManager
+      startBlock: {{ referral.startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - UserReferral
+      abis:
+        - name: ReferralRewardManager
+          file: ./packages/abis/ReferralRewardManager.json
+        - name: ERC20
+          file: ./packages/abis/ERC20.json
+        - name: ERC20NameBytes
+          file: ./packages/abis/ERC20NameBytes.json
+        - name: ERC20SymbolBytes
+          file: ./packages/abis/ERC20SymbolBytes.json
+      eventHandlers:
+        - event: Withdraw(indexed address,uint256,address)
+          handler: onWithdraw
+        - event: BalanceIncrease(indexed address,uint256,address)
+          handler: onBalanceIncrease
+        - event: CodeRegistered(indexed address,string)
+          handler: onCodeRegistered
+      file: ./src/mappings/referralManager.ts

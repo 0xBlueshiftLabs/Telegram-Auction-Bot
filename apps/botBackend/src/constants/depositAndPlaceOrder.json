@@ -1,0 +1,73 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "creditAuctionAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_nativeTokenWrapper",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "creditAuction",
+    "outputs": [
+      {
+        "internalType": "contract CreditAuction",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint96[]",
+        "name": "_minBuyAmounts",
+        "type": "uint96[]"
+      },
+      {
+        "internalType": "bytes32[]",
+        "name": "_prevSellOrders",
+        "type": "bytes32[]"
+      },
+      {
+        "internalType": "string",
+        "name": "referralCode",
+        "type": "string"
+      }
+    ],
+    "name": "depositAndPlaceOrder",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "userId",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "nativeTokenWrapper",
+    "outputs": [
+      {
+        "internalType": "contract IWETH",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

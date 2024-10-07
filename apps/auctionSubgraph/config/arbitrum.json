@@ -1,0 +1,9 @@
+{
+  "network": "arbitrum-one",
+  "lending_factory": {
+    "address": "0x5771c832D78fDf76A3DA918E4B7a49c062910639",
+    "startBlock": 95587678
+  },
+  "convenience_adress": "0xB88bedd28faA7f235995fb9325e996De4c803f40",
+  "weth_address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
+}

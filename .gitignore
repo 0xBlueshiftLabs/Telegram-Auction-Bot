@@ -1,0 +1,10 @@
+nginx-files/*
+
+*/nginx-1.12.2/*
+*/pcre-8.41/*
+
+node_modules/*
+
+config.dev.json
+config.prod.json
+config.staging.json

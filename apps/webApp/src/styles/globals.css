@@ -1,0 +1,23 @@
+* {
+  overscroll-behavior: none;
+}
+
+.custom-select{
+  position:relative
+}
+
+.custom-select::before,
+.custom-select::after {
+  --size: 0.3rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+}
+
+.custom-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid attr(data-content);
+  top: 50%;
+}

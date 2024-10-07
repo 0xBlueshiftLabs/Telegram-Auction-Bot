@@ -1,0 +1,30 @@
+{
+  "network": "mainnet",
+  "lending_factory": {
+    "address": "0xa67eD9FFcAE32A1B6c63D8A5E469446FAa8a8704",
+    "startBlock": 95587678
+  },
+  "auction": {
+    "address": "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+    "startBlock": 0
+  },
+  "referral": {
+    "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+    "startBlock": 0
+  },
+  "lp_farming": {
+    "address": "0xe97088840912617E83441e28405b802Cdaade2DD",
+    "startBlock": 95587678
+  },
+  "credit_staking": {
+    "address": "0x7484569310bc00d9B9603Ddda18d678F873Fa070",
+    "startBlock": 95587678
+  },
+  "blocks": {
+    "address": "0x0000000000000000000000000000000000000000",
+    "startBlock": 95587678
+  },
+  "convenience_adress": "0xB88bedd28faA7f235995fb9325e996De4c803f40",
+  "weth_address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1",
+  "usdc_weth_address": "0x1e002Cb5D66c69172E432E2FC9d4264A51F3Da9B"
+}

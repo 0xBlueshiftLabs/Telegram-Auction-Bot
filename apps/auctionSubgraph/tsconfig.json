@@ -1,0 +1,4 @@
+{
+  "extends": "@graphprotocol/graph-ts/types/tsconfig.base.json",
+  "include": ["src", "tests", "packages/constants/index.template.ts", "packages/constants/index.ts"]
+}

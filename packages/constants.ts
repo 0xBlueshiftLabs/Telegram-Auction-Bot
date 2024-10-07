@@ -1,0 +1,54 @@
+import { ChainMapping } from "./types/assets";
+
+export enum ChainIds {
+  ETHEREUM = 1,
+  ARBITRUM = 42161,
+  FANTOM = 250,
+  ARBITRUM_RINKEBY = 421611,
+  ARBITRUM_GOERLI = 421613,
+  KOVAN = 42,
+  GOERLI = 5,
+  LOCALHOST = 31337,
+}
+
+export const ZERO_ADDRESS: string =
+  "0x0000000000000000000000000000000000000000";
+
+export const RPC_URLS: ChainMapping = {
+  [ChainIds.LOCALHOST]: `https://b63f-2804-388-e07c-3451-d19e-d2f9-bb4e-5755.ngrok-free.app/rpc`,
+  [ChainIds.ARBITRUM_GOERLI]: `https://arb-goerli.g.alchemy.com/v2/KR0VnTKpJ4s7w-IoXTdiSX1D35gtRv-E`,
+};
+
+export const EASY_AUCTION_ADDRESS: ChainMapping = {
+  [ChainIds.LOCALHOST]: `0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9`,
+  [ChainIds.ARBITRUM_GOERLI]: "0x0886274EDc1C9c5cd375d99f8Bae175b477A0E04",
+};
+
+export const REFERRAL_REWARD_MANAGER_ADDRESS: ChainMapping = {
+  [ChainIds.LOCALHOST]: `0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512`,
+  [ChainIds.ARBITRUM_GOERLI]: "0x70795Be4662Bd98009C3508fb72DB1A8769C43A4",
+};
+
+export const WRAPPED_NATIVE_ADDRESS: ChainMapping = {
+  [ChainIds.ARBITRUM]: "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+  [ChainIds.ARBITRUM_GOERLI]: "0xEe01c0CD76354C383B8c7B4e65EA88D00B06f36f",
+  [ChainIds.LOCALHOST]: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  [ChainIds.]: "0xF5c6100Fa77971b2B531c752eA82874Df8bAB44A",
+};
+
+export const NATIVE_ADDRESS: ChainMapping = {
+  [ChainIds.ARBITRUM]: "0x0000000000000000000000000000000000000000",
+  [ChainIds.ARBITRUM_GOERLI]: "0x0000000000000000000000000000000000000000",
+  [ChainIds.LOCALHOST]: "0x0000000000000000000000000000000000000000",
+};
+
+export const NATIVE_NAME: ChainMapping = {
+  [ChainIds.ARBITRUM]: "Ether",
+  [ChainIds.ARBITRUM_GOERLI]: "Ether",
+  [ChainIds.LOCALHOST]: "Ether",
+};
+export const NATIVE_SYMBOL: ChainMapping = {
+  [ChainIds.ARBITRUM]: "ETH",
+  [ChainIds.ARBITRUM_GOERLI]: "ETH",
+  [ChainIds.LOCALHOST]: "ETH",
+};
